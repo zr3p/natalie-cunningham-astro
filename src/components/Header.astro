@@ -52,21 +52,28 @@
         </div>
 
         <!-- Mobile Menu -->
-        <nav class="md:hidden hidden pt-4 pb-2" id="mobile-menu">
-            <div class="flex flex-col space-y-3">
+        <nav
+            class="md:hidden hidden pt-4 pb-2"
+            id="mobile-menu"
+            style="transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);"
+        >
+            <div class="flex flex-col space-y-3 text-center">
                 <a
                     href="#about"
-                    class="text-stone-600 hover:text-stone-900 transition-colors font-medium"
+                    class="text-stone-600 hover:text-stone-900 font-medium mobile-link"
+                    style="transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);"
                     >About</a
                 >
                 <a
                     href="#work"
-                    class="text-stone-600 hover:text-stone-900 transition-colors font-medium"
+                    class="text-stone-600 hover:text-stone-900 font-medium mobile-link"
+                    style="transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);"
                     >Work</a
                 >
                 <a
                     href="#contact"
-                    class="text-stone-600 hover:text-stone-900 transition-colors font-medium"
+                    class="text-stone-600 hover:text-stone-900 font-medium mobile-link"
+                    style="transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);"
                     >Contact</a
                 >
             </div>
@@ -81,6 +88,13 @@
 
         mobileMenuButton?.addEventListener("click", function () {
             mobileMenu?.classList.toggle("hidden");
+        });
+
+        // Close menu when clicking any link
+        document.querySelectorAll(".mobile-link").forEach((link) => {
+            link.addEventListener("click", function () {
+                mobileMenu?.classList.add("hidden");
+            });
         });
     });
 </script>
